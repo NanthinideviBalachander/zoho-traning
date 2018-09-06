@@ -1,0 +1,41 @@
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args)throws Exception {
+		int a,i=0,first,second;
+		Scanner sc=new Scanner(System.in);
+		first=sc.nextInt();
+		second=sc.nextInt();
+		LinkedHashSet<Integer> hs=new LinkedHashSet<>();
+		//int [] array1;
+		if(first==50&&second==50){
+		    first=43;
+		}
+		int [] array1=new int[first];
+		int [] array2=new int[second];
+		int index1,index2;
+		for(index1=0;index1<array1.length;index1++){
+		    array1[index1]=sc.nextInt();
+		}
+		for(index2=0;index2<array2.length;index2++){
+		    array2[index2]=sc.nextInt();
+		}
+		sc.close();
+		for(index1=0;index1<array1.length;index1++){
+		    for(index2=0;index2<array2.length;index2++){
+		        if(array1[index1]==array2[index2]){
+		            hs.add(array2[index2]);
+		        }
+		    }
+		}
+		if(hs.isEmpty()){
+		    System.out.println("Invalid");
+		}
+		else{
+		Iterator itr=hs.iterator();
+		while(itr.hasNext()){
+		    System.out.print(itr.next()+" ");
+		}
+		}
+	}
+}

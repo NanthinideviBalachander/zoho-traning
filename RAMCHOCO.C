@@ -1,0 +1,51 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int n,a[100],i,t,c=0,y=0;
+clrscr();
+scanf("%d",&n);
+for(i=0;i<n;i++)
+{
+scanf("%d",&a[i]);
+}
+for(i=0;i<n-1;i++)
+{
+if(a[i]+3<a[i+1])
+{
+t=a[i+1]-(a[i]+3);
+if(i<n-2)
+{
+a[i+1]=a[i]+3;
+a[i+2]+=t;
+c++;
+}
+}
+else if(a[i]+3>a[i+1])
+{
+t=(a[i]+3)-a[i+1];
+if(i<n-2)
+{
+a[i+1]=a[i]+3;
+a[i+2]-=t;
+c++;
+}
+}
+}
+for(i=0;i<n;i++)
+{
+if((a[i+1]-a[i])==3)
+{
+y++;
+}
+}
+if(y==n-1)
+{
+printf("YES %d",c);
+}
+else
+{
+printf("NO");
+}
+getch();
+}
